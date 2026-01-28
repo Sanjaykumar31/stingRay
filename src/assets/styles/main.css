@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-slate-900 dark:to-indigo-950 text-gray-900 dark:text-gray-100 font-body min-h-screen;
+    transition: background 0.3s ease;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold;
+  }
+}
+
+@layer components {
+  .glass-effect {
+    @apply bg-white/80 dark:bg-gray-800/80 backdrop-blur-md border border-white/20 dark:border-gray-700/50 shadow-xl;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent;
+  }
+
+  .feature-card {
+    @apply glass-effect p-6 rounded-2xl shadow-xl transition-all duration-300 cursor-pointer;
+  }
+  
+  .feature-card:hover {
+    @apply shadow-2xl -translate-y-1;
+  }
+
+  .calculator-display {
+    @apply w-full p-6 text-right text-4xl font-mono bg-white dark:bg-gray-800 rounded-xl border-2 border-gray-200 dark:border-gray-700 min-h-[5rem] flex items-center justify-end;
+  }
+
+  .calculator-button {
+    @apply w-full h-16 text-xl font-semibold rounded-xl transition-all duration-200 shadow-md;
+  }
+  
+  .calculator-button:active {
+    @apply scale-95;
+  }
+  
+  .calculator-button:hover {
+    @apply shadow-lg;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    @apply bg-slate-100 dark:bg-slate-800;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-slate-400 dark:bg-slate-600 rounded;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-500 dark:bg-slate-500;
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 8s ease infinite;
+  }
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes gradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Vue transitions */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
