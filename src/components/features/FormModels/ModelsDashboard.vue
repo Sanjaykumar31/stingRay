@@ -16,7 +16,7 @@
         <h3 class="text-xl font-bold mb-2">{{ model.name }}</h3>
         <p class="text-gray-600 dark:text-gray-400 mb-4">{{ model.description }}</p>
         <div class="flex gap-2">
-          <el-button size="small" @click="$router.push(\`/form-models/\${model.id}/data\`)">View Data</el-button>
+          <!-- <el-button size="small" @click="$router.push(\`/form-models/\${model.id}/data\`)">View Data</el-button>   -->
           <el-button size="small" type="danger" @click="deleteModel(model.id)">Delete</el-button>
         </div>
       </div>
