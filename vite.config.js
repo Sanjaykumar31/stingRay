@@ -16,7 +16,7 @@ export default defineConfig({
         manualChunks: {
           'vue-vendor': ['vue', 'vue-router', 'pinia'],
           'element-plus': ['element-plus', '@element-plus/icons-vue'],
-          'file-processing': ['pdf-lib', 'xlsx', 'mammoth', 'jszip', 'file-saver'],
+          // 'file-processing': ['pdf-lib', 'xlsx', 'mammoth', 'jszip', 'file-saver'],
           'utilities': ['mathjs', 'dayjs', 'lodash', 'uuid']
         }
       }
